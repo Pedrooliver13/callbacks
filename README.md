@@ -1,70 +1,26 @@
-# callbacks
-//PRIMEIRA FORMA
+# CALLBACKS
 
-// MODELS
-
-all(callback){
-  db.query(`
-    SELECT * FROM callbacks
-  ` , (err, results)=>{
-    if(err) throw `Database is ${err}`
-
-    callback(results.rows)
-  })
-}
-
-//CONTROLLERS
-const models = require('...')
-
-module.esports = {
-  create(req, res){
-    models.all(function(results){
-      return res.render(''project/create' , { results })
-    }
-  }
-}
-
-//SEGUNDA FORMA USANDO PROMESSAS
-
-//models
-all(){
-  db.query(`
-  SELECT * FROM callbacks
-  `)
-}
-
-//CONTROLLERS
-const models = require('...')
-
-create(req, res){
-  models.all()
-  .then(function(results){
-    const project = results.rows
+1º FOMA DE UTILIZAR = `
+NÃO É MUITO BOA ... POIS, EM ALGUM MOMENTO , PODE SER QUE TENHA DE USAR UM CALLBACK DENTRO DE OUTRO CALLBACK
+`
+<br>
+2º FORMA USANDO PROMESSAS = `
+ AS PROMESSAS ESPERAM O CALLBACK TRAZER TUDO QUE TEM DE TRAZER PARA CONTINUAR EXECUTANDO
+ MAS, PODE FICAR , BEM CONFUSO...
+`<br>
+3º FORMA USANDO ASYNC AWAIT = `
+  MELHOR FORMA , ELA TAMBEM ESPERA DE CERTA FORMA O CALLBACK TRAZER TUDO,
+  MAS, SEU CÓDIGO FICA MUITO LIMPO<br>
+  
+  OBS:'
+    PARA O AWAIT FUNCIONAR TEM DE TER O "ASYNC" NA FRENTE DA FUNCTION DE RENDERIZAR
     
-    return res.render('project/create' , { project })
-  }).cath(function(err){
-    throw new Error(err)
-  })
-}
+    async create(){}
+  '
+`
+then == promessa , recebe o results<br>
+cath == recebe o err
+<br>
+await == só funciona se o async tiver na frente da função assim:<br>
+async create(){}
 
-//TERCEIRA E MELHOR FORMA
-//USANDO ASYNC-AWAIT
-
-//models
-all(){
-  db.query(`
-    SELECT * FROM callbacks
-  `)
-}
-
-//controllers
-const models = require('...')
-
-module.exports ={
-  async create(req, res){
-    let results = await models.all()
-    const products = results.rows
-    
-    return res.render('products/create' , { products })
-  }
-}
