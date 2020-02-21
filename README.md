@@ -11,18 +11,17 @@ NÃO É MUITO BOA ... POIS, EM ALGUM MOMENTO , PODE SER QUE TENHA DE USAR UM CAL
 <strong>3º FORMA USANDO ASYNC AWAIT</strong> = `
   MELHOR FORMA , ELA TAMBEM ESPERA DE CERTA FORMA O CALLBACK TRAZER TUDO,
   MAS, SEU CÓDIGO FICA MUITO LIMPO<br>
-  
   OBS:'
     PARA O AWAIT FUNCIONAR TEM DE TER O "ASYNC" NA FRENTE DA FUNCTION DE RENDERIZAR
     
-    async create(){}
+    async create(req, res){}
   '
 `
 <br>
 <br>
-then == promessa , recebe o results<br>
-cath == recebe o err
+<strong>then</strong> == promessa , recebe o results<br>
+<strong>cath</strong> == recebe o err
 <br>
-await == só funciona se o async tiver na frente da função assim:<br>
-async create(){}
+<strong>await</strong> == só funciona se o async tiver na frente da função assim:<br>
+async create(req,res){}
 
