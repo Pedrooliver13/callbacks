@@ -23,5 +23,5 @@ NÃO É MUITO BOA ... POIS, EM ALGUM MOMENTO , PODE SER QUE TENHA DE USAR UM CAL
 <strong>cath</strong> == recebe o err
 <br>
 <strong>await</strong> == só funciona se o async tiver na frente da função assim:<br>
-async create(req,res){}
+<strong>async</strong> create(req,res){}
 
