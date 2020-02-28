@@ -20,7 +20,7 @@ NÃO É MUITO BOA ... POIS, EM ALGUM MOMENTO , PODE SER QUE TENHA DE USAR UM CAL
 <br>
 <br>
 <strong>then</strong> == promessa , recebe o results<br>
-<strong>cath</strong> == recebe o err
+<strong>catch</strong> == recebe o err
 <br>
 <strong>await</strong> == só funciona se o async tiver na frente da função assim:<br>
 <strong>async</strong> create(req,res){}
