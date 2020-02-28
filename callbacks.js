@@ -41,7 +41,7 @@ create(req, res){
     const project = results.rows
     
     return res.render('project/create' , { project })
-  }).cath(function(err){
+  }).catch(function(err){
     throw new Error(err)
   })
 }
